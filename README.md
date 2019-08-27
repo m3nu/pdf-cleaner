@@ -1,6 +1,6 @@
 # PDF Cleaner
 
-A macOS workflow to clean and compress PDF files using multiple command line tools
+A macOS workflow to clean and compress PDF files using multiple command line tools.
 
 ## Install
 With Homebrew set up, run `brew bundl` in this folder

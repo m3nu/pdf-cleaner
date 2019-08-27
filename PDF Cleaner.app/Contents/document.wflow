@@ -238,12 +238,11 @@ echo "++ Metadata of new file"
 
 exiftool $TEMP_FILE-2
 pdfinfo -meta $TEMP_FILE-2
-mv $TEMP_FILE-2 $BASENAME-clean.pdf
-rm -f $TEMP_FILE $TEMP_FILE_original
+mv $TEMP_FILE-2 "$BASENAME-clean.pdf"
+rm -f $TEMP_FILE*
 
 OUT=$(basename "$1" .pdf)
-	gs -q -dNOPAUSE -dBATCH -dSAFER -dNOPLATFONTS -sDEVICE=pdfwrite -dCompatibilityLevel=1.8 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dCompressFonts=true -dMaxSubsetPct=100 -dCompressPages=true -dConvertCMYKImagesToRGB=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=$DPI -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=$DPI -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=$DPI -dDownsampleColorImages=true -dDownsampleGrayImages=true -dDownsampleMonoImages=true -dDetectDuplicateImages=true -sOutputFile="$BASENAME-compressed.pdf" "$BASENAME-clean.pdf"
-</string>
+    gs -q -dNOPAUSE -dBATCH -dSAFER -dNOPLATFONTS -sDEVICE=pdfwrite -dCompatibilityLevel=1.8 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dCompressFonts=true -dMaxSubsetPct=100 -dCompressPages=true -dConvertCMYKImagesToRGB=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=$DPI -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=$DPI -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=$DPI -dDownsampleColorImages=true -dDownsampleGrayImages=true -dDownsampleMonoImages=true -dDetectDuplicateImages=true -sOutputFile="$BASENAME-compressed.pdf" "$BASENAME-clean.pdf"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
